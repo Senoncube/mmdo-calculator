@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Курсова робота ММДО</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="main_wrapper">
+    <main>
+
+        <div id="task">
+            <div id="task_text">
+                Для будівництва будинків на <input min="0" type="number" value="100"> будівельних майданчиках
+                вибрали <input min="1" id="project_n" type="number" value="5"> типових проектів. За кожним з проектів відомі
+                тривалість закладки фундаментів і будівництва решти частин
+                споруди, а також житлова площа споруди. Паралельно
+                можна виконувати закладку <input min="0" type="number" value="10"> фундаментів і будівництво
+                <input min="0" type="number" value="15"> будинків.Скласти план будівництва, який максимізує введення
+                житлової площі протягом року (<input min="0" type="number" value="300"> робочих днів), за умови, що
+                будинків <input id="project_restrict" min="0" max="5" type="number" value="2"> типу має бути побудовано не менше <input min="0" type="number" value="10">.
+            </div>
+
+            <div id="task_table">
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Види робіт</td>
+                            <td id="long-cell" colspan="5">Тривалість виконання (дні) для типового проекту</td>
+                        </tr>
+                        <tr id="project_row">
+                            <td>1 проект</td>
+                            <td>2 проект</td>
+                            <td>3 проект</td>
+                            <td>4 проект</td>
+                            <td>5 проект</td>
+                        </tr>
+                        <tr>
+                            <td>Закладка фундаменту</td>
+                            <td><input min="0" type="number" value="20"></td>
+                            <td><input min="0" type="number" value="30"></td>
+                            <td><input min="0" type="number" value="35"></td>
+                            <td><input min="0" type="number" value="30"></td>
+                            <td><input min="0" type="number" value="40"></td>
+                        </tr>
+                        <tr>
+                            <td>Решта робіт</td>
+                            <td><input min="0" type="number" value="40"></td>
+                            <td><input min="0" type="number" value="20"></td>
+                            <td><input min="0" type="number" value="60"></td>
+                            <td><input min="0" type="number" value="35"></td>
+                            <td><input min="0" type="number" value="25"></td>
+                        </tr>
+                        <tr>
+                            <td>Житлова площа, м<sup>2</sup></td>
+                            <td><input min="0" type="number" value="3000"></td>
+                            <td><input min="0" type="number" value="2000"></td>
+                            <td><input min="0" type="number" value="5000"></td>
+                            <td><input min="0" type="number" value="4000"></td>
+                            <td><input min="0" type="number" value="6000"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button id="start">Розв'язати</button>
+            <div id="error" ><h4>Всі поля мають бути заповнені числами!</h4></div>
+        </div>
+
+        <div id="result">
+            <h3>Розв'язок:</h3>
+            <div id="solve" class="flex-center">
+
+            </div>
+            <div id="final_res" class="flex-center">
+
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<script src="math.js"></script>
+<script src="simplexMethod.js"></script>
+<script src="IntegerMethod.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
